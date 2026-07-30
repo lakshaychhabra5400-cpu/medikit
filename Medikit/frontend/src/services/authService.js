@@ -74,6 +74,18 @@ async function doPost(path, body) {
     try { data = await response.json() } catch (e) { /* ignore JSON parse errors */ }
 
     if (!response.ok) {
+      const contentType = response.headers.get('content-type') || ''
+      const shouldFallback = (path === '/register' || path === '/login') && (
+        response.status === 404 ||
+        response.status === 0 ||
+        contentType.includes('text/html') ||
+        !data
+      )
+
+      if (shouldFallback) {
+        return path === '/register' ? localRegister(body) : localLogin(body)
+      }
+
       const msg = data?.message || response.statusText || 'Request failed'
       throw new Error(msg)
     }
