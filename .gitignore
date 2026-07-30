@@ -5,3 +5,5 @@ backend/node_modules/
 backend/coverage/
 backend/uploads/
 */clean/
+frontend/dist/
+dist/
