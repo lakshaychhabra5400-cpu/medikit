@@ -1,7 +1,11 @@
 # Medikit
 It is a medical website.
 
-A simple static landing page has been added and configured for deployment with GitHub Pages.
+This repository now contains the actual Medikit app source under `Medikit/`, including:
+- `Medikit/frontend`: React/Vite frontend
+- `Medikit/backend`: Node.js/Express backend
 
-The site is available at: https://lakshaychhabra5400-cpu.github.io/medikit/
+The frontend has been built and deployed to GitHub Pages.
+
+Live site: https://lakshaychhabra5400-cpu.github.io/medikit/
 
